@@ -1,0 +1,5 @@
+@charset "utf-8";
+
+body{
+	background:linear-gradient(90deg, lightblue, grey,white,grey,lightblue);
+}

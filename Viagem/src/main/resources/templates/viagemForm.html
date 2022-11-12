@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+ <link rel="stylesheet" href="lista.css">
+  <link rel="stylesheet" href="fixos.css">
+<title>Cadastro de viagem</title>
+</head>
+<body >
+
+	<div th:replace="static :: navbar"></div>
+
+	<div class="container">	
+	<br><br>
+	<h1>Cadastro de Viagens</h1>
+	
+	
+	
+	<form action = "#" th:action="@{/process}" th:object="${viagem}" method="post">
+	
+    <div class="form-group col-md-8">
+      <label for="inputCity">TÍTULO</label>
+      <input type="text" class="form-control" id="inputCity"  th:field="*{titulo}">
+      <span th:if="${#fields.hasErrors('titulo')}" th:errors="*{titulo}"></span><br>    
+    </div>
+ 
+    <div class="form-group col-md-8">
+      <label for="inputCity">DESCRIÇÃO</label>
+      <input type="text" class="form-control" id="inputCity" th:field="*{descricao}">
+      <span th:if="${#fields.hasErrors('descricao')}" th:errors="*{descricao}"></span><br>
+    </div>
+  
+    <div class="form-group col-md-5">
+      <label for="inputCity">PAÍS</label>
+      <input type="text" class="form-control" id="inputCity" th:field="*{pais}">
+      <span th:if="${#fields.hasErrors('pais')}" th:errors="*{pais}"></span><br>
+    </div>
+ 
+    <div class="form-group col-md-5">
+      <label for="inputCity">ESTADO</label>
+      <input type="text" class="form-control" id="inputCity" th:field="*{estado}">
+	<span th:if="${#fields.hasErrors('estado')}" th:errors="*{estado}"></span><br>    
+    </div>
+    
+    <div class="form-group col-md-5">
+      <label for="inputCity">CIDADE</label>
+      <input type="text" class="form-control" id="inputCity" th:field="*{cidade}">
+    	<span th:if="${#fields.hasErrors('cidade')}" th:errors="*{cidade}"></span><br>
+    </div>
+    
+    <div class="form-group col-md-3">
+      <label for="inputCity">VALOR</label>
+      <input type="text" class="form-control" id="inputCity" th:field="*{preco}">
+      <span th:if="${#fields.hasErrors('preco')}" th:errors="*{preco}"></span><br>
+    </div>
+
+  <button type="submit" class="btn btn-primary">CADASTRAR</button>
+</form>
+	
+	
+	
+	
+	
+	
+	<br><br><br><br><br><br>
+</div>
+	<DIV th:replace="static::footer"></DIV>
+
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+</body>
+</html>
